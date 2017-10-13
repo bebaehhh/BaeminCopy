@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ <configuration>
+ 
+ 	<typeAliases>
+ 		<!-- 예제 -->
+ 		<!--  typeAlias type="com.ktds.board.vo.BoardSearchVO" alias="BoardSearchVO"/ -->
+ 		
+ 	</typeAliases>
+ 
+ 	<mappers>
+ 	<mapper resource="paging.xml"/>
+ 	<!-- 예제 -->
+ 	<!-- mapper resource="com/ktds/member/dao/sql/memberDao.xml"/ -->
+ 	
+ 	
+ 	</mappers>
+ 
+ </configuration>

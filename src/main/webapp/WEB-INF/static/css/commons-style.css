@@ -1,0 +1,244 @@
+html{
+   -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+* {
+    border: 1px solid black;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border:0;
+    vertical-align: baseline;
+}
+
+body {
+    margin: 0px;
+    background-image: url(/images/bg-body.png);
+    background-position: 0 0;
+    font-family: "Dotum",Droid serif, Helvetica, Arial, sans-serif;
+    line-height: 1.42857143;
+    color: #222;
+    background-color: #f4ebdd;
+    box-sizing: border-box;
+}
+
+header .basic-tp-area{
+    position: relative;
+}
+
+header .tp-area {
+    position: relative;
+    height: auto;
+    margin: 0 auto;
+    padding: 40px 0 0;
+    text-align: center;
+}
+
+header .tp-area h1 {
+    padding-top: 5px;
+    text-align: center;
+    z-index: 15;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h1, .h1 {
+    font-size: 36px;
+}
+
+h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Dotum",Droid serif,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+@media (min-width: 767px){
+    header .tp-area h1 a {
+        width: 231px;
+        height: 70px;
+        margin-top: 0;
+        background-image: url(/baemin_copy_basic/images/main_logo.png);
+    }
+}
+
+header .tp-area h1 a {
+    width: 98px;
+    height: 22.5px;
+    margin-top: 11px;
+    background-image: url(/baemin_copy_basic/images/logo-bm-v2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.ir-el {
+    display: inline-block;
+    background-position: 0 0;
+    background-size: 100% 100%;
+    text-align: left;
+    text-indent: -9999px;
+}
+
+@media (min-width: 768px) {
+    header .tp-area .gnb-wrap {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        text-align: right:
+    }
+}
+
+header .tp-area .gnb-wrap {
+    overflow: hidden;
+    width: 100px;
+}
+
+a {
+    color: #ff4200;
+    text-decoration: none;
+}
+.category-set {
+    width: 100%;
+    background-color: #222;
+}
+
+header .category-set {
+    margin: 0 auto;
+    font-size: 85%
+}
+
+header .category-set dl {
+    margin: 0 auto;
+}
+
+.tp-area, .cate-area, .login-area, .find-pw, .join-us, .category-set dl, foot-area, .award-area {
+    max-width: 980px;
+}
+
+header .cateogry-set .dt-category {
+    position: absolute;
+    top: 56px;
+    left: 10px;
+    width: 22px;
+    height: 22px;
+    background-image: url(/images/ico-cate.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 200%;
+    -webkit-background-size: 100% 200%;
+    text-align: left;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dt, dd {
+    line-height: 1.42857143;
+}
+
+header .category-set dl dd {
+    margin-left: 0;
+    width: 100%;
+}
+
+header .category-set .cate-area {
+    position: relative;
+    overflow: hidden;
+}
+
+header .category-set .cate-area ul {
+    width: 95%;
+    margin: 0 auto;
+    padding: 6px 0;
+}
+
+header .category-set dl dd ul{
+    overflow: hidden;
+    height: auto;
+    margin: 0; 
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+header .category-set .cate-area ul li {
+    float: none;
+    display: inline-block;
+    width: 98px;
+    height: 98px;
+    margin: 0 14px 0 0;
+    padding: 0;
+    background-image: url(/images/tl-cate.jpg);
+    background-repeat: no-repeat;
+    border: 0;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+header .category-set .cate-area ul li em {
+    display: inline-block;
+}
+
+em {
+    font-style: normal;
+}
+
+header .category-set dl dd ul li {
+    float: left;
+    width: 33%;
+    padding: 20px 0;
+    border: solid #212121;
+    border-width: 0 1px 1px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.container {
+    max-width: 980px;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.content {
+    position: relative;
+    display: table-row;
+    height: 100%;
+}
+
+img, input, select, textarea {
+    vertical-align: top;
+}

@@ -1,0 +1,38 @@
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+#wrap-error {
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 440px;
+    height: 100%;
+}
+.error-wrap .error-img img {
+    margin-bottom: 60px;
+    margin-bottom: 6rem;
+    height: 249px;
+}
+.error-wrap .error-img{
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+    padding: inherit;
+    
+}
+
+.error-wrap .error-txt {
+    display: block;
+    position: fixed;
+    bottom: 36px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #999;
+    
+}
