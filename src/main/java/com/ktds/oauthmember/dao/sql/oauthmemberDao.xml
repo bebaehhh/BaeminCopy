@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OauthmemberDao">
+	<insert id="insertOauthmember" parameterType="OauthmemberVO">
+		INSERT INTO OAUTH_MEMBER (
+		                            MEMBER_ID
+					                , PASSWORD
+					                , BIRTHDAY
+					                , PHONE_NUMBER
+					                , GENDER_FLAG
+					                , USE_AGREEMENT_YN
+					                , ELEC_FINACE_AGREEMENT_YN
+					                , INFO_CORRECT_YN
+					                , INFO_THIRD_AGREEMENT_YN
+					                , MAIL_SMS_YN
+					                , ID_CREATE_DATE
+					                , NICK_NAME
+                         		 )
+		VALUES                	 (
+									#{memberId}
+									, #{password}
+									, #{birthday}
+									, #{phoneNumber}
+									, #{genderFlag}
+									, #{useAgreementYn}
+									, #{elecFinaceAgreementYn}
+									, #{infoCorrectYn}
+									, #{infoThirdAgreementYn}
+									, #{mailSmsYn}
+									, SYSDATE
+									, #{nickName}
+                           		 )
+	</insert>
+	
+	<select id="selectOneOauthmenber" parameterType="OauthmemberVO" resultType="OauthmemberVO">
+		SELECT	MEMBER_ID memberId
+                , PASSWORD password
+                , BIRTHDAY birthday
+                , PHONE_NUMBER phoneNumber
+                , GENDER_FLAG genderFlag
+                , USE_AGREEMENT_YN useAgreementYn
+                , ELEC_FINACE_AGREEMENT_YN elecFinaceAgreementYn
+                , INFO_CORRECT_YN infoCorrectYn
+                , INFO_THIRD_AGREEMENT_YN infoThirdAgreementYn
+                , MAIL_SMS_YN mailSmsYn
+                , ID_CREATE_DATE idCreateDate
+                , NICK_NAME nickName
+        FROM	OAUTH_MEMBER
+        WHERE	MEMBER_ID = #{memberId}
+        <if test="password != null and password != ''">
+			AND		PASSWORD = #{password}
+		</if>
+        
+	</select>
+	
+	
+
+
+</mapper>

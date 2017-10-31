@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="oauthmemberDaoImpl" class="com.ktds.oauthmember.dao.OauthmemberDaoImpl">
+			
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	
+	<bean id="oauthmemberServiceImpl" class="com.ktds.oauthmember.service.OauthmemberServiceImpl">
+	 	<property name="oauthmemberDao" ref="oauthmemberDaoImpl"/>
+	</bean>
+	
+	<bean id="mypageDaoImpl" class="com.ktds.oauthmember.dao.MypageDaoImpl">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	
+	<bean id="mypageServiceImpl" class="com.ktds.oauthmember.service.MypageServiceImpl">
+	 	<property name="mypageDao" ref="mypageDaoImpl"/>
+	</bean>
+
+</beans>

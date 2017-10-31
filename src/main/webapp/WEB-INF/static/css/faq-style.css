@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+.search {
+	position: absolute;
+	right: 0;
+	top: 40px;
+	padding-right: 7%;
+}
+
+.event img {
+	padding-top: 10px;
+	margin-bottom: 20px;
+}
+
+#sear-input {
+	width: 310px;
+	height: 43px;
+	border: 1px solid #d1d1d1;
+}
+
+#button {
+	background-color: #948f88;
+	color: #fff;
+	width: 105px;
+	height: 45px;
+}
+
+.faq-list {
+	list-style: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.faq-list a {
+	position: relative;
+    display: block;
+    padding: 11px 0 10px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    color: #222;
+    font-size: .82em;
+    line-height: 19px;
+}
+
+.faq-list a:first-child {
+	border-left: 1px solid #ccc;
+}
+
+.faq-list li {
+	width: 12.5%;
+	float: left;
+}
+
+.faq-list-title {
+    border-top: 1px solid #4c4c4c;
+    padding: 12px 0 10px;
+    font-size: .75em;
+    font-weight: 600;
+}
+
+.faq-list-title span {
+	display: inline-block;
+    width: 120px;
+    text-align: center;
+}
+
+.list-group {
+	position: relative;
+	border-top: 1px solid #e9e9e9;
+}
+
+.list-group:first-child{
+	border-top: 1px solid #ccc;
+}
+
+.list-group a {
+	color: #000;
+	font-size: .72em;
+}
+
+.list-group .list-one span {
+	position: absolute;
+    top: 55%;
+    left: 0;
+    margin-top: -11px;
+    width: 120px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.list-group .list-two span {
+	position: absolute;
+    top: 20%;
+    left: 0;
+    margin-top: -11px;
+    width: 120px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.list-group a img {
+	position: absolute;
+	right: 35px;
+	top: 5px;
+}
+
+.list-one, .list-two {
+	position: relative;
+}
+
+.list-one a {
+    display: inline-block;
+    padding: 13px 112px;
+}
+
+.list-two a {
+	display: inline-block;
+    padding-left: 112px;
+    margin-bottom: -7px;
+    line-height: 4;
+}
+
+.list-content {
+	margin: -5% -29%;
+	font-size: 9pt;
+	font-family: Gulim, 굴림, AppleGothic, sans-serif;
+	margin: auto;
+	padding-left: 112px;
+}
+
+.test {
+	text-align: center;
+}
+
+a {
+	color: #000;
+}

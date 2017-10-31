@@ -68,6 +68,11 @@ public abstract class Pager {
 		this.prevGroupPageNumber = this.groupStartPage - this.printPage - 1;
 	}
 	
+	public String getPageNumber() {
+		String pageNo = Integer.toString(this.pageNo);
+		return pageNo;
+	}
+	
 	protected abstract void computeArticleNumbers();
 	
 	/**

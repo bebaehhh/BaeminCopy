@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ShopDao">
+	
+	<resultMap type="ShopInfoVO" id="ShopInfoVOMap">
+		<id column="SHOP_ID" property="shop_id"/>
+		<result column="SHOP_NAME" property="shop_name"/>
+		<result column="MENU_CATEGORY_NAME" property="menu_category_name"/>
+		<result column="SHOP_OPEN_TIME" property="shop_open_time"/>
+		<result column="SHOP_CLOSE_TIME" property="shop_close_time"/>
+		<result column="SHOP_ADDRESS" property="shop_address"/>
+		<result column="SHOP_ADDRESS_DETAIL" property="shop_address_detail"/>
+		<result column="SHOP_PHOTO_FILENAME" property="shop_photo_filename"/>
+		<result column="SHOP_PHONENUMBER" property="shop_phonenumber"/>
+		<result column="SHOP_INTRODUCE" property="shop_introduce"/>
+		<result column="MADEIN_INTRODUCE_COMMENT" property="madein_introduce_comment"/>
+		<result column="PAYNOW_POSSIBLE_YN" property="paynow_possible_yn"/>
+		<result column="PAY_YN" property="pay_yn"/>
+		<result column="MIN_PAYMENT" property="min_payment"/>
+		<result column="STAR_POINT_AVG" property="star_point_avg"/>
+		<collection property="shopMenuCategoryList" javaType="java.util.ArrayList" ofType="ShopMenuCategoryVO">
+			<id column="SHOP_CATEGORY_ID" property="shop_category_id" />
+			<result column="SHOP_ID" property="shop_id" />
+			<result column="CATEGORY_NAME" property="category_name" />
+			<collection property="shopMenuDetailList" javaType="java.util.ArrayList" ofType="ShopMenuDetailVO">
+				<id column="SHOP_MENU_ID" property="shop_menu_id" />
+				<result column="SHOP_CATEGORY_ID" property="shop_category_id" />
+				<result column="MENU_NAME" property="menu_name" />
+				<result column="MENU_PRICE" property="menu_price" />
+				<result column="RECOMMEND_MENU_YN" property="recommend_menu_yn" />
+				<result column="MENU_PHOTO_FILE" property="menu_photo_file" />
+				<result column="MENU_COMMENT" property="menu_comment" />
+				<collection property="menuOptionList" javaType="java.util.ArrayList" ofType="MenuOptionVO">
+					<id column="MENU_OPTION_ID" property="menu_option_id" />
+					<result column="SHOP_MENU_ID" property="shop_menu_id" />
+					<result column="OPTION_NAME" property="option_name" />
+					<result column="OPTION_PRICE" property="option_price" />
+					<result column="REQUIRED_YN" property="required_yn" />
+				</collection>
+			</collection>
+		</collection>
+	</resultMap>
+	
+	<resultMap type="ReviewVO" id="ReviewVOMap">
+		<id column="REVIEW_ID" property="review_id"/>
+		<result column="SHOP_ID" property="shop_id"/>
+		<result column="MEMBER_ID" property="member_id"/>
+		<result column="REVIEW_CONTENT" property="review_content"/>
+		<result column="FILE_NAME" property="file_name"/>
+		<result column="WRITE_DATE" property="write_date"/>
+		<result column="STARPOINT" property="starpoint"/>
+		<association property="oauthmemberVO" javaType="OauthmemberVO">
+			<id column="M_ID" property="memberId" />
+			<result column="PASSWORD" property="password" />
+			<result column="BIRTHDAY" property="birthday" />
+			<result column="PHONE_NUMBER" property="phoneNumber" />
+			<result column="GENDER_FLAG" property="genderFlag" />
+			<result column="USE_AGREEMENT_YN" property="useAgreementYn" />
+			<result column="ELEC_FINACE_AGREEMENT_YN" property="elecFinaceAgreementYn" />
+			<result column="INFO_CORRECT_YN" property="infoCorrectYn" />
+			<result column="INFO_THIRD_AGREEMENT_YN" property="infoThirdAgreementYn" />
+			<result column="MAIL_SMS_YN" property="mailSmsYn" />
+			<result column="ID_CREATE_DATE" property="idCreateDate" />
+			<result column="NICK_NAME" property="nickName" />
+			<result column="PROFILE_PHOTO" property="profile_photo" />
+		</association>
+	</resultMap>
+	
+	<select id="selectOneShopInfo" parameterType="ShopSearchVO" resultMap="ShopInfoVOMap">
+		SELECT	S.SHOP_ID
+		        , S.SHOP_NAME
+		        , S.MENU_CATEGORY_NAME
+		        , S.SHOP_OPEN_TIME
+		        , S.SHOP_CLOSE_TIME
+		        , S.SHOP_ADDRESS
+		        , S.SHOP_ADDRESS_DETAIL
+		        , S.SHOP_PHOTO_FILENAME
+		        , S.SHOP_PHONENUMBER
+		        , S.SHOP_INTRODUCE
+		        , S.MADEIN_INTRODUCE_COMMENT
+		        , S.PAYNOW_POSSIBLE_YN
+		        , S.PAY_YN
+		        , S.MIN_PAYMENT
+		        , S.STAR_POINT_AVG
+		        , C.SHOP_CATEGORY_ID
+		        , C.SHOP_ID
+		        , C.CATEGORY_NAME
+		        , D.SHOP_MENU_ID
+		        , D.SHOP_CATEGORY_ID
+		        , D.MENU_NAME
+		        , D.MENU_PRICE
+		        , D.RECOMMEND_MENU_YN
+		        , D.MENU_PHOTO_FILE
+		        , D.MENU_COMMENT
+		        , O.MENU_OPTION_ID
+		        , O.SHOP_MENU_ID
+		        , O.OPTION_NAME
+		        , O.OPTION_PRICE
+		        , O.REQUIRED_YN
+		FROM    SHOP_INFO S
+		        , SHOP_MENU_CATEGORY C
+		        , SHOP_MENU_DETAIL D
+		        , MENU_OPTION O
+		WHERE   S.SHOP_ID = C.SHOP_ID(+)
+		AND     C.SHOP_CATEGORY_ID = D.SHOP_CATEGORY_ID(+)
+		AND     D.SHOP_MENU_ID = O.SHOP_MENU_ID(+)
+		AND     S.SHOP_ID = #{shop_id}
+	</select>
+		
+		
+	<select id="selectAllReview" parameterType="ShopSearchVO" resultMap="ReviewVOMap">
+		<include refid="Paging.header" />
+			SELECT  R.REVIEW_ID
+			        , R.SHOP_ID
+			        , R.MEMBER_ID
+			        , R.REVIEW_CONTENT
+			        , R.FILE_NAME
+			        , TO_CHAR(R.WRITE_DATE,'YYYY-MM-DD') WRITE_DATE
+			        , R.STARPOINT
+			        , O.MEMBER_ID M_ID
+			        , O.NICK_NAME
+			        , O.PROFILE_PHOTO
+			FROM    REVIEW R
+			        , OAUTH_MEMBER O
+			WHERE   R.MEMBER_ID = O.MEMBER_ID(+)
+			AND     R.SHOP_ID = #{shop_id}
+		<include refid="Paging.footer" />
+	</select>
+	
+	<select id="selectAllReviewCount" parameterType="ShopSearchVO" resultType="_int">
+			SELECT  COUNT(1)
+			FROM    REVIEW R
+			        , OAUTH_MEMBER O
+			WHERE   R.MEMBER_ID = O.MEMBER_ID(+)
+			AND     R.SHOP_ID = #{shop_id}
+	</select>
+	
+	<insert id="insertBookmark" parameterType="BookmarkVO">
+			INSERT	INTO	BOOKMARK	(	BOOKMARK_ID
+											, SHOP_ID
+											, MEMBER_ID
+										)
+			VALUES						(	BOOKMARK_ID_SEQ.NEXTVAL
+											, #{shop_id}
+											, #{memberId}
+										)
+	</insert>
+	
+		
+</mapper>

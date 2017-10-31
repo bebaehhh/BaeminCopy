@@ -10,6 +10,10 @@
 		<config>src/main/webapp/WEB-INF/spring/applicationContext.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/rootContext.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/controllerContext.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/oauthmemberContext.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/mypageContext.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/baeminboardContext.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/orderContext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+#baeminId{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+}
+#baeminId #baeminIdPhoto{
+  width: 440px;
+  margin: 0 auto;
+  position: relative;
+}
+#baeminIdlogo{
+  text-align: center;
+  margin-top: 110px;
+  margin-bottom: 50px;
+}
+#baeminIdlogo img{
+    height: 226px;
+    vertical-align: top;
+  }
+.baeminContent{
+  margin: 0 auto 10px;
+  width: 282px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #999;
+  text-align: justify;
+  padding-bottom: 22px;
+}
+.baeminButton{
+  display: block;
+  width: 100%;
+
+}
+.baeminButton button{
+  font-family: '돋움', dotum, sans-serif, helvetica, 'AppleGothic';
+  font-size: 17px;
+  display: block;
+  width: 100%;
+  background-color: #2ac1bc;
+  padding: 21px 0 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  outline:0;
+}

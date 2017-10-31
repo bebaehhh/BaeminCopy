@@ -1,0 +1,276 @@
+@charset "UTF-8";
+#loginWrapper3 {
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+}
+
+.contentFind {
+  position: relative;
+  display: table-row;
+  height: 100%;
+}
+.idpwType{
+  overflow: hidden;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+.idpwType li{
+  float: left;
+  width: 50%;
+}
+
+.idpwType li.idFind a{
+  color: #999;
+  background-color: #ededed;
+}
+
+.idpwType li.pwFind a{
+  color: #999;
+  background-color: #ededed;
+}
+
+.idpwType li.on a {
+	color: #ededed;
+    background-color: #2ac1bc;
+}
+
+.idpwType li.on a {
+    color: #ededed;
+    background-color: #2ac1bc;
+}
+
+
+.idpwType li a{
+  display: block;
+  padding: 24px 0 22px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #999;
+  background-color: #ededed;
+}
+
+a{
+  text-decoration: none;
+  outline: none;
+
+}
+
+#loginWrapper3 .emailCheck{
+  margin: 24px 0 8px;
+}
+
+.emailCheck{
+  font-size: 16px;
+  color: #000;
+  padding: 0;
+  border: 0;
+  font-weight: bold;
+}
+
+.emailOrId{
+  float: left;
+  margin-right: 1.5%;
+  width: 68%;
+  border: 1px solid #c7c7c7;
+  box-sizing: border-box;
+  z-index: 10;
+  position: relative;
+  padding: 18px 40px 15px 15px;
+  border-top: 1px solid #c7c7c7;
+  font-size: 0;
+  line-height: 0;
+  margin-bottom: 23px;
+}
+
+.emailOrId input{
+  width: 100%;
+  color: #000;
+  font-size: 15px;
+  line-height: 18px;
+  height: 18px;
+  border: none;
+}
+#loginWrapper3 button{
+  padding: 18px 0 17px;
+  width: 30.3%;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #ccc;
+  border: none;
+  margin-bottom: 25px;
+}
+
+.emailButton .emailBtn{
+  padding: 21px 0 20px;
+  background-color: #bbb;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  border: 0;
+}
+.certNumber1{
+  float: left;
+  margin-right: 1.5%;
+  width: 68%;
+  border: 1px solid #c7c7c7;
+  box-sizing: border-box;
+  z-index: 10;
+  position: relative;
+  padding: 18px 40px 15px 15px;
+  border-top: 1px solid #c7c7c7;
+  font-size: 0;
+  line-height: 0;
+}
+.certNumber1 input{
+  width: 100%;
+  color: #000;
+  font-size: 15px;
+  line-height: 18px;
+  height: 18px;
+  border: none;
+}
+
+.certNumber button{
+  padding: 18px 0 17px;
+  width: 30.3%;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #ccc;
+  border: none;
+  padding: 21px 0 20px;
+}
+.certNumber .certNoBtn{
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  border: 0;
+}
+.emailAndId p{
+  float: right;
+  margin-right: 54px;
+  margin-left: 7px;
+  font-size: 12px;
+  line-height: 6px;
+  vertical-align: top;
+  font-weight: 400;
+  color: #999;
+}
+
+.loginFindUl {
+	list-style: none;
+}
+
+.findList {
+	display: none;
+}
+
+.on {
+	display: block;
+}
+.findList .emailCheck1{
+  margin: 24px 0 8px;
+}
+.emailCheck1{
+  font-size: 16px;
+  color: #000;
+  padding: 0;
+  border: 0;
+  font-weight: bold;
+}
+.emailOrId1{
+  float: left;
+  margin-right: 1.5%;
+  width: 441px;
+  border: 1px solid #c7c7c7;
+  box-sizing: border-box;
+  z-index: 10;
+  position: relative;
+  padding: 18px 40px 15px 15px;
+  border-top: 1px solid #c7c7c7;
+  font-size: 0;
+  line-height: 0;
+  margin-bottom: 23px;
+}
+.emailOrId1 input{
+  width: 100%;
+  color: #000;
+  font-size: 15px;
+  line-height: 18px;
+  height: 18px;
+  border: none;
+}
+#phoneNumber{
+  font-size: 16px;
+  color: #000;
+  padding: 0;
+  border: 0;
+  font-weight: bold;
+}
+#phoneNumberCheck .phonenumberCheck1 {
+  z-index: 10;
+  margin-right: 1.5%;
+  padding: 18px 5px 15px 5px;
+  width: 31.66%;
+  border: 1px solid #c7c7c7;
+  box-sizing: border-box;
+}
+
+.phonenumberCheck1 input{
+
+  color: #000;
+  font-size: 15px;
+  line-height: 18px;
+  height: 18px;
+  border: none;
+}
+
+input[type="tel"]{
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  box-sizing: border-box;
+  outline: none;
+  background: none;
+}
+.confirmBtn button{
+  display: inline-block;
+  width: 47.27%;
+
+}
+
+.btnConfirm{
+  background-color: #5b5b5b;
+  padding: 21px 0 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  border: 0;
+  box-sizing: content-box;
+}
+
+div .confirmBtn{
+  margin-left: 107px;
+  margin-right:-322px;
+  padding: 19px;
+}
+
+#loginWrapper3 .confirmBtn button{
+	  background-color: #5b5b5b;
+}
+

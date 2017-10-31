@@ -3,5 +3,31 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	
+	<bean id="mypageController" class="com.ktds.oauthmember.web.MypageController">
+		<property name="mypageService" ref="mypageServiceImpl"></property>
+	</bean>
 
+	<bean id="oauthmemberController" class="com.ktds.oauthmember.web.OauthmemberController">
+		<property name="oauthmemberService" ref="oauthmemberServiceImpl"></property>
+	</bean>
+	
+	<bean id="baeminboardController" class="com.ktds.baeminboard.web.BaeminboardController">
+		<property name="baeminboardService" ref="baeminboardServiceImpl"></property>
+	</bean>
+	
+	<bean id="shopController" class="com.ktds.baeminboard.web.ShopController">
+		<property name="shopService" ref="shopServiceImpl"></property>
+	</bean>
+
+	<bean id="serviceController" class="com.ktds.service.web.ServiceController">
+		<property name="serviceService" ref="ServiceServiceImpl"></property>
+	</bean>
+	
+	<bean id="orderController" class="com.ktds.order.web.OrderController">
+		<property name="orderService" ref="orderServiceImpl"></property>
+	</bean>
+	
+	<bean id="fileUtilController" class="com.ktds.common.FileUtilController" />
+	
 </beans>

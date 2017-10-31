@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+#signWapper{
+      margin: 0;
+      width: 100%;
+      font-family: '돋움', dotum, sans-serif, helvetica, 'AppleGothic';
+      padding: 0px;
+}
+
+#step{
+  padding-bottom: 12px;
+}
+#signWapper #content-a{
+      width: 440px;
+      margin: 0 auto;
+      position: relative;
+}
+#sign ul{
+      padding-left: 0px;
+}
+
+#sign .sign1{
+      font-size: 14px;
+      line-height: 20px;
+      padding-left: 5px;
+      margin-bottom: 8px;
+      color: #999;
+      list-style: none;
+}
+#sign .sign1 a{
+      position: relative;
+      left: 0;
+      display: inline-block;
+      line-height: 0.9;
+      font-weight: 600;
+      color: #2ac1bc;
+      border-bottom: 1px solid #2ac1bc;
+}
+#sign .sign1 em{
+      color: #222;
+      font-style: normal;
+}
+#join ul{
+  padding-left: 0;
+}
+
+#join{
+      overflow: hidden;
+      margin: 30px 0 -4px;
+}
+
+#join .dext{
+      font-size: 16px;
+      color: #000;
+      margin: 0;
+      list-style: none;
+      font-weight: 700;
+}
+
+#join .text{
+      position: absolute;
+      margin: 19px;
+      padding-right: 0px;
+      right: 0;
+      display: inline-block;
+      font-size: 13px;
+      color: #999;
+
+}
+
+#login_id1 #login_id2{
+      margin-bottom: 8px;
+      border: 1px solid #c7c7c7;
+      z-index: 10;
+      position: relative;
+      padding: 17px 40px 17px 15px;
+      font-size: 0;
+      line-height: 0;
+      border-top: 1px solid #c7c7c7;
+}
+#login_id1 #id1 {
+      width: 100%;
+      color: #000;
+      font-size: 15px;
+      line-height: 18px;
+      height: 18px;
+      border: none;
+}
+
+#login_id1 #login_id2 #idBtn1 {
+      border: none;
+      background: #fff;
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      font-size: 15px;
+      display: none;
+}
+
+#login_pw1 #login_pw2{
+      margin-bottom: 8px;
+      border: 1px solid #c7c7c7;
+      z-index: 10;
+      position: relative;
+      padding: 17px 40px 17px 15px;
+      font-size: 0;
+      line-height: 0;
+      border-top: 1px solid #c7c7c7;
+
+}
+#login_pw1 #password1 {
+      width: 100%;
+      color: #000;
+      font-size: 15px;
+      line-height: 18px;
+      height: 18px;
+      border: none;
+}
+#login_pw1 #password2 {
+      width: 100%;
+      color: #000;
+      font-size: 15px;
+      line-height: 18px;
+      height: 18px;
+      border: none;
+}
+
+#login_pw1 #login_pw2 #passwordBtn1 {
+      border: none;
+      background: #fff;
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      font-size: 15px;
+      display: none;
+}
+#login_pw1 #login_pw2 #passwordBtn2 {
+      border: none;
+      background: #fff;
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      font-size: 15px;
+      display: none;
+}
+
+#login_pw1 #login_pw2:first-child {
+      margin-bottom: 0;
+      border-bottom: 0;
+}
+
+#nextBtn {
+      display: block;
+      width: 100%;
+
+}
+
+#nextBtn button{
+      display: block;
+      width: 100%;
+      background-color: #e3e3e3;
+      color: #fff;
+      cursor: default;
+      text-align: center;
+      font-size: 17px;
+      padding: 21px 0 20px;
+      border: none;
+}
+#join2 ul{
+      padding-left: 0px;
+}
+#join2 .join3{
+      margin: 33px 0 5px;
+      font-size: 16px;
+      color: #000;
+      font-weight: 700;
+      list-style: none;
+}
+#facebookBtn1 {
+      display: block;
+      width: 100%;
+}
+
+#facebookBtn1 button {
+      display: block;
+      width: 100%;
+      background-color: #3a5898;
+      padding: 21px 0 20px;
+      text-align: center;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+}

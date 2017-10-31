@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="baeminboardDaoImpl" class="com.ktds.baeminboard.dao.BaeminboardDaoImpl">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+	</bean>
+	
+	<bean id="baeminboardServiceImpl" class="com.ktds.baeminboard.service.BaeminboardServiceImpl">
+		<property name="baeminboardDao" ref="baeminboardDaoImpl"></property>
+	</bean>
+	
+	<bean id="shopDaoImpl" class="com.ktds.baeminboard.dao.ShopDaoImpl">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+	</bean>
+	
+	<bean id="shopServiceImpl" class="com.ktds.baeminboard.service.ShopServiceImpl">
+		<property name="shopDao" ref="shopDaoImpl"></property>
+	</bean>
+	
+</beans>

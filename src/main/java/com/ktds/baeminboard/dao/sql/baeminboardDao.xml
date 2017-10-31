@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BaeminboardDao">
+	
+	<insert id="insertBaeminboard" parameterType="ShopInfoVO">
+		
+	</insert>
+	
+	<select id="searchAllBaeminboard" parameterType="ShopSearchVO" resultType="ShopInfoVO">
+		<include refid="Paging.header" />
+			SELECT	SHOP_ID	
+					, SHOP_NAME
+					, MENU_CATEGORY_NAME
+					, SHOP_OPEN_TIME
+					, SHOP_CLOSE_TIME
+					, SHOP_ADDRESS
+					, SHOP_ADDRESS_DETAIL
+					, SHOP_PHOTO_FILENAME
+					, SHOP_PHONENUMBER
+					, SHOP_INTRODUCE
+					, MADEIN_INTRODUCE_COMMENT
+					, PAYNOW_POSSIBLE_YN
+					, PAY_YN
+					, MIN_PAYMENT
+					, STAR_POINT_AVG
+			FROM	SHOP_INFO
+			<if test="searchKeyword != null and searchKeyword != ''">
+				<if test="searchKeyword != '모아보기' and searchKeyword != '바로결제'">
+					WHERE	SHOP_NAME LIKE '%' || #{searchKeyword} || '%'
+					OR		MENU_CATEGORY_NAME LIKE '%' || #{searchKeyword} || '%'
+				</if>
+				<if test="searchKeyword == '바로결제'">
+					WHERE	PAYNOW_POSSIBLE_YN = 'Y'
+				</if>
+			</if>
+			ORDER	BY SHOP_NAME DESC
+		<include refid="Paging.footer" />
+	</select>
+	
+	<select id="searchAllBaeminboardCount" parameterType="ShopSearchVO" resultType="_int">
+		SELECT	COUNT(1)
+		FROM	SHOP_INFO
+		<if test="searchKeyword != null and searchKeyword != ''">
+			<if test="searchKeyword != '모아보기' and searchKeyword != '바로결제'">
+				WHERE	SHOP_NAME LIKE '%' || #{searchKeyword} || '%'
+				OR		MENU_CATEGORY_NAME LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchKeyword == '바로결제'">
+				WHERE	PAYNOW_POSSIBLE_YN = 'Y'
+			</if>
+		</if>
+	</select>
+	
+	<select id="selectAllBaeminboard" parameterType="ShopSearchVO" resultType="ShopInfoVO">
+		<include refid="Paging.header" />
+			SELECT	SHOP_ID	
+					, SHOP_NAME
+					, MENU_CATEGORY_NAME
+					, SHOP_OPEN_TIME
+					, SHOP_CLOSE_TIME
+					, SHOP_ADDRESS
+					, SHOP_ADDRESS_DETAIL
+					, SHOP_PHOTO_FILENAME
+					, SHOP_PHONENUMBER
+					, SHOP_INTRODUCE
+					, MADEIN_INTRODUCE_COMMENT
+					, PAYNOW_POSSIBLE_YN
+					, PAY_YN
+					, MIN_PAYMENT
+					, STAR_POINT_AVG
+			FROM	SHOP_INFO
+			<if test="searchKeyword != null and searchKeyword != ''">
+				<if test="searchKeyword != '모아보기' and searchKeyword != '바로결제'">
+					WHERE	MENU_CATEGORY_NAME = #{searchKeyword}
+				</if>
+				<if test="searchKeyword == '바로결제'">
+					WHERE	PAYNOW_POSSIBLE_YN = 'Y'
+				</if>
+			</if>
+			ORDER	BY SHOP_NAME DESC
+		<include refid="Paging.footer" />
+	</select>
+	
+	<select id="selectAllBaeminboardCount" parameterType="ShopSearchVO" resultType="_int">
+		SELECT	COUNT(1)
+		FROM	SHOP_INFO
+		<if test="searchKeyword != null and searchKeyword != ''">
+			<if test="searchKeyword != '모아보기' and searchKeyword != '바로결제'">
+				WHERE	MENU_CATEGORY_NAME = #{searchKeyword}
+			</if>
+			<if test="searchKeyword == '바로결제'">
+				WHERE	PAYNOW_POSSIBLE_YN = 'Y'
+			</if>
+		</if>
+	</select>
+	
+</mapper>

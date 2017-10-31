@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OrderDao">
+	
+	<insert id="insertOrder" parameterType="OrderListVO">
+		INSERT INTO ORDER_LIST (
+		                            ORDERLIST_ID
+									, SHOP_ID
+									, MEMBER_ID
+									, TOTAL_PRICE
+									, PAY_METHOD
+									, ORDER_PHONE_NUMBER
+									, ORDER_ADDRESS
+									, REQUEST_CONTENT
+									, REVIEW_YN
+									, REVIEW_POSSIBLE_YN
+									, ORDER_DATE
+									, POINTSAVE_PRICE
+									, POINTSAVE_DATE
+									, ORDER_STATUS
+                         		 )
+		VALUES                (
+									#{orderlistId}
+									, #{shopId}
+									, #{memberId}
+									, #{totalPrice}
+									, #{payMethod}
+									, #{orderPhoneNumber}
+									, #{orderAddress}
+									, #{requestContent}
+									, #{reviewYn}
+									, #{reviewPossibleYn}
+									, SYSDATE
+									, #{pointsavePrice}
+									, #{pointsaveDate}
+									, #{orderStatus}
+                           		 )
+	</insert>
+	
+	<select id="selectAllOrder" parameterType="OrderListVO" resultType="OrderListVO">
+	
+		SELECT	ORDERLIST_ID orderlistId
+                , SHOP_INFO.SHOP_ID shopId
+                , OAUTH_MEMBER.MEMBER_ID memberId
+                , TOTAL_PRICE totalPrice
+                , PAY_METHOD payMethod
+                , ORDER_PHONE_NUMBER orderPhoneNumber
+                , ORDER_ADDRESS orderAddress
+                , REQUEST_CONTENT requestContent
+                , REVIEW_YN reviewYn
+                , REVIEW_POSSIBLE_YN reviewPossibleYn
+                , ORDER_DATE orderDate
+                , POINTSAVE_PRICE pointsavePrice
+                , POINTSAVE_DATE pointsaveDate
+                , ORDER_STATUS orderStatus
+        FROM	ORDER_LIST, OAUTH_MEMBER, SHOP_INFO
+        WHERE	MEMBER_ID = #{memberId}
+        AND		SHOP_ID = #{shopId}
+		
+	</select>
+	
+	
+	<select id="selectOneOrder" parameterType="OauthmemberVO" resultType="OrderListVO">
+		SELECT  ROWNUM
+				, A.POINTSAVE_PRICE pointsavePrice
+		        , A.ORDER_ADDRESS orderAddress
+		        , A.ORDER_DATE orderDate
+		FROM (	SELECT	( SELECT SUM(POINTSAVE_PRICE) FROM ORDER_LIST WHERE MEMBER_ID = #{memberId} ) POINTSAVE_PRICE
+	        			, ORDER_ADDRESS
+	        			, ORDER_DATE
+				FROM    ORDER_LIST
+				WHERE   MEMBER_ID = #{memberId}
+				ORDER   BY ORDER_DATE DESC
+			 ) A
+		WHERE ROWNUM=1
+	</select>
+	
+	
+</mapper>

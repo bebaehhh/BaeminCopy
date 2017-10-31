@@ -7,13 +7,31 @@
  	<typeAliases>
  		<!-- 예제 -->
  		<!--  typeAlias type="com.ktds.board.vo.BoardSearchVO" alias="BoardSearchVO"/ -->
- 		
+ 		<typeAlias type="com.ktds.oauthmember.vo.OauthmemberVO" alias="OauthmemberVO"/>
+ 		<typeAlias type="com.ktds.oauthmember.vo.BookmarkVO" alias="BookmarkVO"/>
+ 		<typeAlias type="com.ktds.baeminboard.vo.MenuOptionVO" alias="MenuOptionVO"/>
+ 		<typeAlias type="com.ktds.baeminboard.vo.ShopInfoVO" alias="ShopInfoVO"/>
+ 		<typeAlias type="com.ktds.baeminboard.vo.ShopMenuCategoryVO" alias="ShopMenuCategoryVO"/>
+ 		<typeAlias type="com.ktds.baeminboard.vo.ShopMenuDetailVO" alias="ShopMenuDetailVO"/>
+ 		<typeAlias type="com.ktds.baeminboard.vo.ShopSearchVO" alias="ShopSearchVO"/>
+ 		<typeAlias type="com.ktds.baeminboard.vo.ReviewVO" alias="ReviewVO"/>
+ 		<typeAlias type="com.ktds.order.vo.OrderListVO" alias="OrderListVO"/>
+ 		<typeAlias type="com.ktds.service.vo.ServiceFaqVO" alias="ServiceFaqVO"/>
+ 		<typeAlias type="com.ktds.service.vo.ServiceNoticeEventVO" alias="ServiceNoticeEventVO"/>
+ 		<typeAlias type="com.ktds.service.vo.ServiceSearchVO" alias="ServiceSearchVO"/>
  	</typeAliases>
  
  	<mappers>
  	<mapper resource="paging.xml"/>
  	<!-- 예제 -->
  	<!-- mapper resource="com/ktds/member/dao/sql/memberDao.xml"/ -->
+ 	
+	 	<mapper resource="com/ktds/oauthmember/dao/sql/oauthmemberDao.xml"/>
+	 	<mapper resource="com/ktds/oauthmember/dao/sql/mypageDao.xml"/>
+	 	<mapper resource="com/ktds/baeminboard/dao/sql/baeminboardDao.xml"/>
+	 	<mapper resource="com/ktds/baeminboard/dao/sql/shopDao.xml"/>
+	 	<mapper resource="com/ktds/order/dao/sql/orderDao.xml"/>
+	 	<mapper resource="com/ktds/service/dao/sql/serviceDao.xml"/>
  	
  	
  	</mappers>
