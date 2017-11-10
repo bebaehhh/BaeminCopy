@@ -1,6 +1,8 @@
 package com.ktds.baeminboard.service;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import com.ktds.baeminboard.dao.BaeminboardDao;
 
@@ -38,12 +40,28 @@ public class BaeminboardServiceImpl implements BaeminboardService{
 		shopSearchVO.setPageNo(pager.getPageNumber());
 		
 		List<ShopInfoVO> shopInfoVOList = baeminboardDao.searchAllBaeminboard(shopSearchVO);
-		for(ShopInfoVO shopInfoVO : shopInfoVOList) {
+		
+		shopInfoVOList = shopInfoVOList.stream()
+					  .map(vo ->{
+						  vo.setShop_photo_filename(vo.getShop_photo_filename().replaceAll("\\.", "-"));
+						  return vo;
+					  }).collect(Collectors.toList());
+														   
+		
+		shopInfoVOList.forEach(vo -> vo.setShop_photo_filename(vo.getShop_photo_filename().replaceAll("\\.", "-")));
+					
+					  
+		
+		/*for(ShopInfoVO shopInfoVO : shopInfoVOList) {
 			String fileName = (shopInfoVO.getShop_photo_filename()).replaceAll("\\.", "-");
 			shopInfoVO.setShop_photo_filename(fileName);
-		}
+		}*/
 		
-		return shopInfoVOList;
+		return shopInfoVOList.stream()
+				  .map(vo ->{
+					  vo.setShop_photo_filename(vo.getShop_photo_filename().replaceAll("\\.", "-"));
+					  return vo;
+				  }).collect(Collectors.toList());
 	}
 
 	@Override
@@ -60,13 +78,16 @@ public class BaeminboardServiceImpl implements BaeminboardService{
 		shopSearchVO.setEndNumber(pager.getEndArticleNumber());
 		shopSearchVO.setPageNo(pager.getPageNumber());
 		
-		List<ShopInfoVO> shopInfoVOList = baeminboardDao.searchAllBaeminboard(shopSearchVO);
-		for(ShopInfoVO shopInfoVO : shopInfoVOList) {
+		
+		/*for(ShopInfoVO shopInfoVO : shopInfoVOList) {
 			String fileName = (shopInfoVO.getShop_photo_filename()).replaceAll("\\.", "-");
 			shopInfoVO.setShop_photo_filename(fileName);
-		}
+		}*/
 		
-		return shopInfoVOList;
+		return baeminboardDao.searchAllBaeminboard(shopSearchVO)
+							 .stream()
+							 .map(ShopInfoVO::replace)
+							 .collect(Collectors.toList());
 	}
 
 }

@@ -149,5 +149,11 @@ public class ShopInfoVO {
 	public void setShopMenuCategoryList(List<ShopMenuCategoryVO> shopMenuCategoryList) {
 		this.shopMenuCategoryList = shopMenuCategoryList;
 	}
+	
+	public static ShopInfoVO replace(ShopInfoVO vo) {
+		vo.setShop_photo_filename(
+				vo.getShop_photo_filename().replaceAll("\\.", "-"));
+		return vo;
+	}
 
 }

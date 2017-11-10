@@ -12,7 +12,7 @@
 	<mvc:resources location="/WEB-INF/static/js/" mapping="/js/**"/>
 	
 <!-- interceptor 처리할 페이지 결정 후 반영하기 -->	
-<!-- 	<mvc:interceptors>
+ <!-- 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
 			<mvc:exclude-mapping path="/user/login"/>		
