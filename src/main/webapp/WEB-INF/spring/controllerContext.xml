@@ -30,4 +30,6 @@
 	
 	<bean id="fileUtilController" class="com.ktds.common.FileUtilController" />
 	
+	<bean id="statisticsController" class="com.ktds.statistics.web.StatisticsController"></bean>
+	
 </beans>

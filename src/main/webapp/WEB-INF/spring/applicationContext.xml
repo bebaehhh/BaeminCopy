@@ -23,6 +23,13 @@
 			<bean id="loginCheckInterceptor" class="com.ktds.common.LoginCheckInterceptor" />	
 		</mvc:interceptor>
 	</mvc:interceptors> -->
+	
+	<mvc:interceptors>
+      <mvc:interceptor>
+         <mvc:mapping path="/oauthmember/doLogin"/>
+         <bean id="loginInterceptor" class="com.ktds.interceptors.LoginInterceptor"></bean>
+      </mvc:interceptor>
+   </mvc:interceptors>
 		
 	<bean id = "viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/" />
